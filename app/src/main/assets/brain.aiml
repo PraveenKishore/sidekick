@@ -10,7 +10,7 @@
         <li> Li </li>
                 <li> Mi </li>
                 <li> Jello </li>
-                <li> helloi </li>
+                <li> helloi <star/></li>
         </random>
         </template>
         <oob></oob>

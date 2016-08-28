@@ -72,6 +72,7 @@ public class AIMLHelper {
                     for(String t:template) {
                         Log.i(TAG, "Template: " + t);
                     }
+                    Log.i(TAG, "OOB: " + oob);
 
                     aimlSet.add(new Response(pattern, template, oob));
                 } catch (Exception e) {

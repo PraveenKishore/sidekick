@@ -2,8 +2,10 @@ package com.prosoft.google.codesprint.sidekick;
 
 import android.app.Notification;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
+import android.media.AudioManager;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.service.notification.NotificationListenerService;
@@ -29,11 +31,22 @@ public class NotificationService extends NotificationListenerService {
     @Override
     public void onNotificationPosted(StatusBarNotification sbn) {
 
-        boolean isEnabled = PreferenceManager.getDefaultSharedPreferences(context).getBoolean("isSpeakingNotificationEnabled", false);
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+
+        boolean isEnabled = prefs.getBoolean("isSpeakingNotificationEnabled", false);
         Log.i(TAG, "SpeakingNotification: " + isEnabled);
 
         if(!isEnabled) {
             return;
+        }
+
+        AudioManager audioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
+        boolean onlyOnHeadset = prefs.getBoolean("onlyOnHeadset", false);
+        boolean headsetConnected = audioManager.isWiredHeadsetOn();
+        if(onlyOnHeadset) {
+            if(!headsetConnected) {
+                return;
+            }
         }
 
         Log.i(TAG,"ID :" + sbn.getId() + "t" + sbn.getNotification().toString()+ "\t" + sbn.getPackageName());

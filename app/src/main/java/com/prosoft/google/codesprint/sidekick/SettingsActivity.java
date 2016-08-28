@@ -15,6 +15,7 @@ import android.widget.CompoundButton;
 public class SettingsActivity extends AppCompatActivity {
 
     private SwitchCompat enableSpeakingNotification;
+    private SwitchCompat enableOnlyOnHeadset;
     private SharedPreferences.Editor editor;
 
     @Override
@@ -27,8 +28,12 @@ public class SettingsActivity extends AppCompatActivity {
         editor = PreferenceManager.getDefaultSharedPreferences(this).edit();
 
         enableSpeakingNotification = ((SwitchCompat)findViewById(R.id.enableSpeakingNotifications));
+        enableOnlyOnHeadset = ((SwitchCompat)findViewById(R.id.enableOnlyOnHeadset));
 
-        enableSpeakingNotification.setChecked(PreferenceManager.getDefaultSharedPreferences(this).getBoolean("isSpeakingNotificationEnabled", false));
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        enableSpeakingNotification.setChecked(prefs.getBoolean("isSpeakingNotificationEnabled", false));
+        enableOnlyOnHeadset.setChecked(prefs.getBoolean("onlyOnHeadset", false));
+        enableOnlyOnHeadset.setEnabled(enableSpeakingNotification.isEnabled());
 
         enableSpeakingNotification.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -36,11 +41,21 @@ public class SettingsActivity extends AppCompatActivity {
                 if(!isNotificationAccessGranted()) {
                     startActivity(new Intent("android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS"));
                 }
+                enableOnlyOnHeadset.setEnabled(checked);
                 editor.putBoolean("isSpeakingNotificationEnabled", checked);
                 editor.apply();
                 editor.commit();
             }
         });
+        enableOnlyOnHeadset.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean checked) {
+                editor.putBoolean("onlyOnHeadset", checked);
+                editor.apply();
+                editor.commit();
+            }
+        });
+
         findViewById(R.id.aboutUs).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -53,8 +68,10 @@ public class SettingsActivity extends AppCompatActivity {
         super.onResume();
         if(isNotificationAccessGranted() && PreferenceManager.getDefaultSharedPreferences(this).getBoolean("isSpeakingNotificationEnabled", false)) {
             enableSpeakingNotification.setChecked(true);
+            enableOnlyOnHeadset.setEnabled(false);
         } else {
             enableSpeakingNotification.setChecked(false);
+            enableOnlyOnHeadset.setChecked(true);
         }
     }
 
