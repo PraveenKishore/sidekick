@@ -1,0 +1,19 @@
+<aiml>
+    <category>
+        <pattern>Who are you</pattern>
+        <template>I am Side Kick!</template>
+    </category>
+    <category>
+        <pattern>you</pattern>
+        <template>
+        <random>
+        <li> Li </li>
+                <li> Mi </li>
+                <li> Jello </li>
+                <li> helloi </li>
+        </random>
+        </template>
+        <oob></oob>
+    </category>
+
+</aiml>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.prosoft.google.codesprint.sidekick.MainActivity"
+    tools:showIn="@layout/activity_main"
+    android:background="#000">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/bg1"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:id="@+id/response"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="30dp"
+        android:gravity="center"
+        android:text="Good Morning! How may I be of assistance?"
+        android:textColor="#fff"
+        android:textSize="22sp"
+        android:fontFamily="sans-serif-light"
+        android:layout_marginTop="120dp" />
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/editInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginBottom="60dp"
+        android:hint="Tap the mic and speak"
+        android:imeOptions="actionSearch"
+        android:singleLine="true"
+        android:imeActionLabel="Search"
+        android:cursorVisible="false"
+        android:textColorHint="#fff"
+        android:textColor="#fff"
+        android:textSize="17sp"
+        android:background="#000"
+        android:fontFamily="sans-serif-light"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+
+    <ImageView
+        android:id="@+id/btn_mic"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:tint="#fff"
+        android:clickable="true"
+        android:padding="17dp"
+        android:src="@drawable/selector_mic"
+        android:layout_above="@id/editInput"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/speak"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Speak Text"
+        android:layout_alignParentBottom="true"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/settings"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:tint="#fff"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:padding="10dp"
+        android:src="@drawable/ic_settings"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true" />
+
+</RelativeLayout>
