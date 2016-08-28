@@ -3,6 +3,31 @@
         <pattern>Who are you</pattern>
         <template>I am Side Kick!</template>
     </category>
+
+    <category>
+        <pattern>Evening</pattern>
+        <template>Very Good evening</template>
+        <oob>play evening</oob>
+    </category>
+
+    <category>
+        <pattern>What do I do when I am good at something</pattern>
+        <template>If you're good at something, never do it for free</template>
+        <oob>play free</oob>
+    </category>
+
+    <category>
+        <pattern>Evening</pattern>
+        <template>Very Good evening</template>
+        <oob>play evening</oob>
+    </category>
+
+    <category>
+        <pattern>Good Evening</pattern>
+        <template><srai/></template>
+        <oob>play evening</oob>
+    </category>
+
     <category>
         <pattern>you</pattern>
         <template>
@@ -10,10 +35,10 @@
         <li> Li </li>
                 <li> Mi </li>
                 <li> Jello </li>
-                <li> helloi <star/></li>
+                <li> helloi <star/> hello</li>
         </random>
         </template>
-        <oob></oob>
+        <oob>Play evening</oob>
     </category>
 
 </aiml>

@@ -59,6 +59,17 @@ public class Chatter {
         if(r != null) {
             String templates[] = r.getTemplates();
             response = templates[new Random().nextInt(templates.length)];
+            String action = r.getAction();
+            if(action != null && !action.isEmpty()) {
+                if(action.contains("play")) {
+                    String clip = action.replaceAll("play", "").trim();
+                    int id = context.getResources().getIdentifier(clip, "raw", context.getPackageName());
+                    if(id != -1) {
+                        response = " " + response;  // If there is a space at the beginning, then dont speak;
+                        playSound(id);
+                    }
+                }
+            }
         }
         /*
         if(text.contains("who are you")) {

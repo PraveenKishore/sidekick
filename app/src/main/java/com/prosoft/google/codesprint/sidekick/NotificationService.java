@@ -25,7 +25,6 @@ public class NotificationService extends NotificationListenerService {
         super.onCreate();
         context = getApplicationContext();
         ttsHelper = TTSHelper.getInstance(context);
-
     }
 
     @Override
@@ -62,12 +61,18 @@ public class NotificationService extends NotificationListenerService {
                 !packageName.contains("browser") &&
                 !packageName.contains("ucmobile") &&
                 !packageName.contains("walkman") &&
-                !packageName.contains("keyboard") &&
-                !packageName.contains("gaana")) {
+                !packageName.contains("inputmethod") &&
+                !packageName.contains("gaana") &&
+                !packageName.contains("com.android") &&
+                !packageName.contains("saavn")) {
             Log.i(TAG, "App: " + getAppName(packageName));
             Log.i(TAG, "Title: " + notificationTitle);
             Log.i(TAG, "Text: " + notificationText);
             Log.i(TAG, "Subtext: " + notificationSubText);
+
+            if(notificationText == null) {
+                return;
+            }
 
             if(packageName.contains("whatsapp")) {
                 try {

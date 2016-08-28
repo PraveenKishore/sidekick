@@ -82,8 +82,10 @@ public class MainActivity extends AppCompatActivity {
                 if(actionId == EditorInfo.IME_ACTION_SEARCH) {
                     Log.i(TAG, "" + editInput.getText().toString());
                     String response = chatter.respond(editInput.getText().toString());
+                    if(!response.isEmpty() && !(response.startsWith(" "))) {
+                        ttsHelper.speak(response);
+                    }
                     textResponse.setText(response);
-                    ttsHelper.speak(response);
                     return false;
                 }
                 return false;
@@ -150,8 +152,10 @@ public class MainActivity extends AppCompatActivity {
                             .getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
                     editInput.setText(result.get(0));
                     String response = chatter.respond(result.get(0));
+                    if(!response.isEmpty() && !(response.startsWith(" "))) {
+                        ttsHelper.speak(response);
+                    }
                     textResponse.setText(response);
-                    ttsHelper.speak(response);
                 }
                 break;
             }

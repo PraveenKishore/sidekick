@@ -62,6 +62,7 @@ public class AIMLHelper {
                     if(templateList.getLength() > 1) {
                         template = new String[templateList.getLength()];
                         for(int j = 0; j < templateList.getLength(); j++) {
+                            Node node = templateList.item(j);
                             template[j] = templateList.item(j).getTextContent().toString();
                         }
                     } else {
@@ -80,7 +81,6 @@ public class AIMLHelper {
                 }
             }
         }
-
     }
 
     public Response getResponse(String text) {
