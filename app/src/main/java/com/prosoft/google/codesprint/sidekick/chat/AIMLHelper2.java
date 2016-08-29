@@ -90,7 +90,7 @@ public class AIMLHelper2 {
             text = text.trim();
             for(Response r:aimlSet) {
                 Log.i(TAG, "Comparing: " + r.getPattern());
-                if(text.toLowerCase().matches(r.getPattern().replace("*", ".*"))) {
+                if(text.toLowerCase().matches(r.getPattern().toLowerCase().trim().replace("*", ".*"))) {
                     Log.i(TAG, "Matched: {" + r.getPattern() + "} Reply: " + r.getTemplates());
                     return r;
                 }

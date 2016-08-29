@@ -59,6 +59,7 @@ public class Chatter {
         if(r != null) {
             String templates[] = r.getTemplates();
             response = templates[new Random().nextInt(templates.length)];
+            response = response.trim();
             String action = r.getAction();
             if(action != null && !action.isEmpty()) {
                 if(action.contains("play")) {
