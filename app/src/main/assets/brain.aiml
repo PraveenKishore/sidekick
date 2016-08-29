@@ -1,9 +1,31 @@
 <aiml>
     <category>
         <pattern>Who are you</pattern>
-        <template>I am Side Kick!</template>
+        <template>I am your Side Kick!</template>
     </category>
 
+        <pattern>What are you</pattern>
+        <template>I am your Side Kick!</template>
+    </category>
+
+        <pattern>What is your name</pattern>
+        <template>I am your Side Kick!</template>
+    </category>
+
+	<category>
+        <pattern>Who created you</pattern>
+		<template>
+		<random>
+		<li>Friends call him Iron Man, with members of Pro Studio and one going by the name Sim</li>
+        <li>Geeks ofcourse! Praveen, Pramod and Simran </li>
+        <li>My Father ;)</li>
+        <li>A bunch of RVCE geeks</li>
+		<random>
+		</template>
+	</category>
+        <pattern>tell me about yourself</pattern>
+        <template>my name is side kick, your virtual personal assistant,i can read out messages and notifications for you , set alarm for you, i am here to make your life easier</template>
+    </category>
     <category>
         <pattern>Good Evening</pattern>
         <template>Very Good evening</template>
@@ -17,12 +39,12 @@
     </category>
 
 	<category>
-        <pattern>If you're good at something, never do it for free</pattern>
+        <pattern>If you are good at something, never do it for free</pattern>
         <template>Yeah, only if you are</template>
     </category>
 
 	<category>
-        <pattern>Who's your girlfriend</pattern>
+        <pattern>Who is your girlfriend</pattern>
         <template>
 			<random>
 				<li>Tim cook will sue me, if I say you so</li>
@@ -33,13 +55,13 @@
 
 	<category>
         <pattern>What do you think of Google</pattern>
-        <template> I don't think I Google!
+        <template>I don't think. I Google!
 		</template>
     </category>
 
 	<category>
         <pattern>Do you like Google</pattern>
-        <template>I don't think I Google</template>
+        <template>I don't like Google. I Google</template>
     </category>
 
 	<category>
@@ -49,7 +71,7 @@
     </category>
 
     <category>
-        <pattern>What do I do when I am good at something</pattern>
+        <pattern>how to be rich</pattern>
         <template>If you're good at something, never do it for free</template>
         <oob>play free</oob>
     </category>
@@ -66,24 +88,37 @@
         <oob>play evening</oob>
     </category>
 
-    <category>
-        <pattern>you</pattern>
+<category>
+        <pattern>tell me a joke</pattern>
         <template>
-        <random>
-        <li> Li </li>
-                <li> Mi </li>
-                <li> Jello </li>
-                <li> helloi <star/> hello</li>
-        </random>
-        </template>
-        <oob>Play evening</oob>
-    </category>
+		<random>
 
+		<li>Do you know what makes a big difference?
+In morning when it is 7:00 and 7:05!</li>
+		<li>entha saavaa, nange joke baralla</li>
+		<li>Why was the toilet paper rolling down the mountain? To get to the bottom</li>
+		<li>Heard Apple is designing a new automatic car. But they're having trouble installing windows.</li>
+		<li>Whenever I undress in the bathroom, my shower gets turned on.</li>
+		<li>two translators are on a sinking ship, the first says do you know how to swim? The second says No, but I know how to shout for help in 19 languages</li>
+		<li>What is the computer’s favorite food? Microchips</li>
+		<li>Chika muka hila hila machakka pacha pacha gulumbaka machapaada</li>
+		<li>I used to suffer from soap addiction, but I’m clean now.</li>
+		<li>There is a restaurant called Karma.There’s no menu, You get what you deserve</li>
+		<li>If I had a dollar for every girl that found me unattractive, they would eventually find me attractive.</li>
+		<li>A recent study has found that women who carry a little extra weight live longer than the men who mention it</li>
+		<li>Artificial intelligence is no match for natural stupidity</li>
+		<li>I hate when I am about to hug someone really sexy and my face hits the mirror.</li>
+		<li>I started out with nothing, and I still have most of it.</li>
+		</random></template>
+    </category>
 	<category>
         <pattern>*</pattern>
         <template>
 			<li>I don't think I can respond to that</li>
 			<li>You can ask me to make an impression instead</li>
+			<li>I think i cant digest that</li>
+			<li>Please don't make me feel awkward by asking difficult things</li>
+			<li>Dont ask queries related to last question, i have short term memory, like Ghajni</li>
 		</template>
     </category>
 
