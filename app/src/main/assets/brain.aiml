@@ -5,9 +5,47 @@
     </category>
 
     <category>
-        <pattern>Evening</pattern>
+        <pattern>Good Evening</pattern>
         <template>Very Good evening</template>
         <oob>play evening</oob>
+    </category>
+
+	<category>
+        <pattern>How to be rich</pattern>
+        <template>If you're good at something, never do it for free</template>
+        <oob>play free</oob>
+    </category>
+
+	<category>
+        <pattern>If you're good at something, never do it for free</pattern>
+        <template>Yeah, only if you are</template>
+    </category>
+
+	<category>
+        <pattern>Who's your girlfriend</pattern>
+        <template>
+			<random>
+				<li>Tim cook will sue me, if I say you so</li>
+				<li>Don't worry, Not your ex</li>
+			</random>
+		</template>
+    </category>
+
+	<category>
+        <pattern>What do you think of Google</pattern>
+        <template> I don't think I Google!
+		</template>
+    </category>
+
+	<category>
+        <pattern>Do you like Google</pattern>
+        <template>I don't think I Google</template>
+    </category>
+
+	<category>
+        <pattern>How to make money</pattern>
+        <template>If you're good at something, never do it for free</template>
+        <oob>play free</oob>
     </category>
 
     <category>
@@ -39,6 +77,14 @@
         </random>
         </template>
         <oob>Play evening</oob>
+    </category>
+
+	<category>
+        <pattern>*</pattern>
+        <template>
+			<li>I don't think I can respond to that</li>
+			<li>You can ask me to make an impression instead</li>
+		</template>
     </category>
 
 </aiml>

@@ -33,7 +33,7 @@ public class SettingsActivity extends AppCompatActivity {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         enableSpeakingNotification.setChecked(prefs.getBoolean("isSpeakingNotificationEnabled", false));
         enableOnlyOnHeadset.setChecked(prefs.getBoolean("onlyOnHeadset", false));
-        enableOnlyOnHeadset.setEnabled(enableSpeakingNotification.isEnabled());
+        enableOnlyOnHeadset.setEnabled(enableSpeakingNotification.isChecked());
 
         enableSpeakingNotification.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -68,10 +68,9 @@ public class SettingsActivity extends AppCompatActivity {
         super.onResume();
         if(isNotificationAccessGranted() && PreferenceManager.getDefaultSharedPreferences(this).getBoolean("isSpeakingNotificationEnabled", false)) {
             enableSpeakingNotification.setChecked(true);
-            enableOnlyOnHeadset.setEnabled(false);
+            enableOnlyOnHeadset.setEnabled(true);
         } else {
             enableSpeakingNotification.setChecked(false);
-            enableOnlyOnHeadset.setChecked(true);
         }
     }
 

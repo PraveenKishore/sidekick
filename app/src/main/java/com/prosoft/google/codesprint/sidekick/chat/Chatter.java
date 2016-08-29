@@ -18,7 +18,7 @@ public class Chatter {
     private Context context;
     private static Chatter instance;
     private MediaPlayer mediaPlayer;
-    private static AIMLHelper aimlHelper;
+    private static AIMLHelper2 aimlHelper;
 
     protected Chatter(Context context) {
         this.context = context;
@@ -27,7 +27,7 @@ public class Chatter {
     public static Chatter getInstance(Context context) throws IOException, ParserConfigurationException {
         if(instance == null) {
             instance = new Chatter(context);
-            aimlHelper = new AIMLHelper();
+            aimlHelper = new AIMLHelper2();
             aimlHelper.load(context.getApplicationContext().getAssets().open("brain.aiml"));
         }
         return instance;
@@ -36,8 +36,8 @@ public class Chatter {
     public String normalise(String string) {
         Log.i("Chatter", string);
         string = " " + string + " ";
-        string = string.replace("?", " ? ");
-        string = string.replace("!", " ! ");
+        string = string.replace("?", "");
+        string = string.replace("!", "");
         string = string.replace(".", " . ");
         string = string.replace(" u ", " you ");
         string = string.replace(" r ", " are ");

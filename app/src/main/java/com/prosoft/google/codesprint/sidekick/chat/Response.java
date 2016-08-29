@@ -15,11 +15,11 @@ public class Response implements Comparable<Response> {
     }
 
     public String getAction() {
-        return action;
+        return (action == null)?"": action;
     }
 
     public String getPattern() {
-        return pattern;
+        return (pattern == null)?"":pattern;
     }
 
     public String[] getTemplates() {
