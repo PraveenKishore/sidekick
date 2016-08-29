@@ -14,7 +14,7 @@ Remember the times when you were listening to your favourite music on your way h
 Bored? check out our fun chatting assistant and have a fun conversation! Power of AIML on android. The intelligence of the app can be updated on the go, without updating the app itself. All the intelligence is stored on a seperate file which can be updated without any modifications in the code. And dont worry about privacy, the app doesnt upload your data anywhere and is fully offile app. (**Bits for Nerds: TreeSet is used to store and access the intelligence in memory**)
 
 ## Easter eggs
-Ask and interesting things and be surprised with the response ;)
+Ask and interesting things and be surprised with the response ;) (PS: Try "Good evening")
 
 **NOTE:** The AIML has to be updated for the app to be completely be functional chat assistant. Await for the next update.
 
