@@ -63,7 +63,6 @@ public class NotificationService extends NotificationListenerService {
                 !packageName.contains("walkman") &&
                 !packageName.contains("inputmethod") &&
                 !packageName.contains("gaana") &&
-                !packageName.contains("com.android") &&
                 !packageName.contains("saavn")) {
             Log.i(TAG, "App: " + getAppName(packageName));
             Log.i(TAG, "Title: " + notificationTitle);
