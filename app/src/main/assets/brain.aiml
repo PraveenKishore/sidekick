@@ -77,6 +77,12 @@
     </category>
 
     <category>
+            <pattern>how to get rich</pattern>
+            <template>If you're good at something, never do it for free</template>
+            <oob>play free</oob>
+        </category>
+
+    <category>
         <pattern>Evening</pattern>
         <template>Very Good evening</template>
         <oob>play evening</oob>
